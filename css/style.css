@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: xx-large;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.main-container {
+    display: grid;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    grid-template-columns: 45% 45%;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "area1 area2"
+                         "area1 area3";
+    padding: 16px;
+    grid-gap: 16px;
+}
+
+.primeiro-item {
+    grid-area: area1;
+    background-color: blue;
+}
+
+.segundo-item {
+    grid-area: area2;
+    background-image: linear-gradient(to right, red, yellow);
+
+}
+
+.terceiro-item {
+    grid-area: area3;
+    background-image: url('https://images.unsplash.com/photo-1557599443-2071a2df9c19?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1082&q=80');
+    background-size: cover;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}   
+
+/* REPONSIVIDADE */
+@media (max-width: 650px) {
+    .main-container {
+        grid-template-columns: 90%;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas: "area1"
+                             "area2"
+                             "area3";
+    }
+}
